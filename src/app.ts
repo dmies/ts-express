@@ -17,14 +17,14 @@ class App {
     }
 
     // Configure Express middleware.
-    private middleware(): void {
+    private middleware = (): void => {
         this.express.use(logger('dev'));
         this.express.use(bodyParser.json());
         this.express.use(bodyParser.urlencoded({extended: false}));
-    }
+    };
 
     // Configure API endpoints.
-    private routes(): void {
+    private routes = (): void => {
         /* This is just to get up and running, and to make sure what we've got is
          * working so far. This function will change when we start to add more
          * API endpoints */
@@ -37,7 +37,7 @@ class App {
         });
         this.express.use('/', router);
         this.express.use('/api/v1/heroes', new HeroRouter().router);
-    }
+    };
 
 }
 

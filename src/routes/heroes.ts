@@ -18,14 +18,14 @@ export class HeroRouter {
      */
     public getAll = (request: Request, response: Response, next: NextFunction) => {
         response.send(Heroes);
-    }
+    };
 
     /**
      * GET one hero by id
      */
     public getOne = (request: Request, response: Response, next: NextFunction) => {
-        let query = parseInt(request.params.id);
-        let hero = Heroes.find(hero => hero.id === query);
+        const query = parseInt(request.params.id);
+        const hero = Heroes.find(hero => hero.id === query);
         if (hero) {
             response.status(200)
                 .send({
@@ -40,6 +40,6 @@ export class HeroRouter {
                     status: response.status
                 });
         }
-    }
+    };
 
 }
